@@ -1,0 +1,20 @@
+Para executar o arquivo com nodemon:
+Instalar o nodemon (npm install nodemon --save)
+
+No package.json, na seção scripts, colocar:
+"start": "nodemon app.js",
+
+Após isso, quando for executar o projeto no terminal, utilizar o comando:
+npm start
+
+
+Hospedagem de deploys gratuítos: heroku, vercel, github pages
+
+
+Para exibir imagens no servidor:
+  Tem que liberar a estrutura no servidor para ele exibir as imagens.
+  Documentação express para liberar: 
+  https://expressjs.com/pt-br/starter/static-files.html
+  Inserir a seguinte linha de comando antes das rotas.
+    app.use(express.static('public'));
+    A partir de agora, não é mais necessário colocar o caminho /public/img/arquivo.extensao || somente: img/arquivo.extensao
