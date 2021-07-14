@@ -16,5 +16,3 @@ app.get('/blog', (req,res) => res.sendFile(path.join(__dirname + "/views/blog.ht
 
 //subindo o servidor
 app.listen(3000, () => console.log("Servidor está funcionando"));
-
-//criar arquivo blog

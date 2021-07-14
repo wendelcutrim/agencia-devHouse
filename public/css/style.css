@@ -1,0 +1,22 @@
+body {
+    font-family: sans-serif;
+}
+
+.titulo-noticia {
+    color: red;
+}
+
+.subtitulo-noticia {
+    color: black;
+    font-weight: bold;
+}
+
+.social-icons {
+    height: 30px;
+    align-self: center;
+}
+
+.footer-div{
+    text-align: center;
+    padding-top: 10px;
+}
