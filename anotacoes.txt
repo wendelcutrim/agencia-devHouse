@@ -18,3 +18,8 @@ Para exibir imagens no servidor:
   Inserir a seguinte linha de comando antes das rotas.
     app.use(express.static('public'));
     A partir de agora, não é mais necessário colocar o caminho /public/img/arquivo.extensao || somente: img/arquivo.extensao
+
+
+Para instalar o nodemon no modo desenvolvedor:
+  executar o comando: npm install nodemon -D
+  Assim fará com que no package.json o arquivo seja salvo no modo desenvolvedor, caso prescise instalar outras bibliotecas no modo desenvolvedor basta utilizar o comando -D no final.
