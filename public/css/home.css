@@ -1,0 +1,97 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 80px;
+    align-items: center;
+    font-family: "Roboto";
+}
+
+.menu a {
+    color: #3f3f6c;
+    margin: 50px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.menu img a {
+    cursor: pointer;
+}
+
+.atendimento button {
+    background-color: #3751ff;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto";
+    padding-top: 40px;
+    background-color: rgba(242, 249, 255, 0.12);
+}
+
+.banner h1 {
+    color: #1E266D;
+    font-size: 56px;
+    font-weight: bold;
+    align-content: center;
+    text-align: center;
+
+}
+
+.banner div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner div p {
+    font-size: 18px;
+    text-align: center;
+    color: #1E266D;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.banner-div-button-1 {
+    background-color: #3751ff;
+    color: white;
+    font-size: 16px;
+    font-weight: lighter;
+    padding: 10px;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.banner-div-button-2 {
+    background-color: #FFFFFF;
+    color: #3f3f6c;
+    font-size: 16px;
+    font-weight: lighter;
+    padding: 10px;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.banner img {
+    padding-top: 45px;
+    margin-right: 0px;
+    margin-left: 115px;
+}
