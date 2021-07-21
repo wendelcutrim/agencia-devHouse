@@ -42,7 +42,7 @@ header {
     align-items: center;
     font-family: "Roboto";
     padding-top: 40px;
-    background-color: rgba(242, 249, 255, 0.12);
+    background: rgba(242, 249, 255);
 }
 
 .banner h1 {
@@ -94,4 +94,40 @@ header {
     padding-top: 45px;
     margin-right: 0px;
     margin-left: 115px;
+    /* display: none; */
+}
+
+/* @media (min-width: 800px) {
+    .banner img{
+        display: block;
+    }
+}
+
+@media (min-width: 992px) {
+    .banner img{
+        visibility: hide;
+    }    
+} */
+
+#menu-mobile{
+    display: none;
+
+}
+
+@media (max-width: 465px) {
+    .menu{
+        display: none;
+    }
+
+    .atendimento{
+        display: none;
+    }
+
+    #menu-mobile{
+        display: block;
+    }
+
+    .banner img{
+        display: none;
+    }
 }
