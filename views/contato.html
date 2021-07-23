@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,400;1,700&display=swap">
+    <link rel="stylesheet" href="/css/contato.css">
+    <title>Contato</title>
+</head>
+
+<body>
+    <header>
+        <a href="/home"><img src="/img/home-page/logo.png" title="Logo Dev House" alt="logo devHouse"></a>
+        <img id="menu-mobile" src="/img/home-page/menu-icon.png" title="Menu Incon" alt="menu-icon">
+        <nav class="menu">
+            <a href="/home">Home</a>
+            <a href="/produtos">Produtos</a>
+            <a href="/depoimentos">Depoimentos</a>
+        </nav>
+        <div class="atendimento">
+            <a href="telto:+00&nbsp;123&nbsp;456&nbsp;789">(00) 12345-6789</a>
+            <button>Atendimento</button>
+        </div>
+    </header>
+    <section class="formulario">
+        <div>
+            <h1>Contato</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <form action="/receber-contato" method="POST">
+            
+            <input type="text" name="first-name" placeholder="First Name">
+            <input type="text" name="last-name" placeholder="Last Name">
+            
+            <input type="tel" name="phone-number" placeholder="Phone Number">
+            <select name="services">
+                <option selected disabled>Select Services</option>
+                <option value="site">Site</option>
+                <option value="systems">Systems</option>
+                <option value="ecommerce">E-Commerce</option>
+                <option value="landingpages">Landingpages</option>
+                <option value="aplications">Desenvolvimento de Aplicativos</option>
+                <option value="integrations">Integrações</option>
+            </select>
+            <button class="button-form" type="reset">Clear</button>
+            <button class="button-form" type="submit">Send</button>
+        </form>
+    </section>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Roboto";
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 80px;
+    align-items: center;
+    font-family: "Roboto";
+}
+
+.menu a {
+    color: #3f3f6c;
+    margin: 50px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.menu img a {
+    cursor: pointer;
+}
+
+.atendimento button {
+    background-color: #3751ff;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+/* .formulario div{
+    padding-bottom: 20vh;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    
+}
+
+.formulario div h1{
+    font-size: 48px;
+    color: #1E266D;
+    align-items: center;
+}
+
+.formulario div p{
+    color: black;
+    padding-top: 50px;
+    align-items: center;
+}
+
+.formulario form{
+    padding-top: 50px;
+    padding-left: 20px;
+}
+
+.formulario input{
+    color: rgba(19, 39, 67, 0.50);
+    padding-left: 10px;
+    border: 1px solid black;
+    height: 50px;
+    border-radius: 8px;
+    margin-left: 20px;
+    margin-top: 20px;
+    max-width: 100%;
+    
+    
+}
+
+.formulario select{
+    color: rgba(19, 39, 67, 0.50);
+    padding-left: 10px;
+    border: 1px solid black;
+    height: 50px;
+    border-radius: 8px;
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.button-form{
+    background-color: #3751ff;
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 20px;
+    text-decoration: none;
+    margin-top: 20px
+}
+
+
+#menu-mobile{
+    display: none;
+
+}
+
+@media (max-width: 465px) {
+    .menu{
+        display: none;
+    }
+
+    .atendimento{
+        display: none;
+    }
+
+    #menu-mobile{
+        display: block;
+    }
+
+    .banner img{
+        display: none;
+    }
+} */

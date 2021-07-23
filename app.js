@@ -2,13 +2,20 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
 app.get('/', (req,res) => res.sendFile(path.join(__dirname + "/views/home.html")));
 
 app.get('/home',(req,res)=>res.sendFile(path.join(__dirname + "/views/home.html")));
 
-app.get('/contato', (req,res) => res.send('Contatos'));
+app.get('/contato',(req,res)=>res.sendFile(path.join(__dirname + "/views/contato.html")));
+
+app.post('/receber-contato',(req,res)=>{
+    console.log(req.body)
+    res.send("Contato Recebido")
+})
 
 app.get('/manutencao', (req,res) => res.sendFile(path.join(__dirname + "/views/manutencao.html")));
 
