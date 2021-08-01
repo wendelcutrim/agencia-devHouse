@@ -25,7 +25,30 @@
             <button>Atendimento</button>
         </div>
     </header>
-    <section class="formulario">
+    <section id="contato">
+        <div>
+            <h1>Contato</h1>
+            <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex repellat
+                nam voluptatibus dicta consequatur sit, corrupti at numquam laborum
+                eligendi libero.</small>
+        </div>
+        <form action="/receber-contato" method="POST">
+            <div id="nome-completo">
+                <input class="input-padrao" type="text" name="nome" placeholder="Digite seu nome" required>
+                <input class="input-padrao" type="text" name="sobrenome" placeholder="Digite seu sobrenome" required>
+            </div>
+            <input class="input-padrao" type="tel" name="telefone" placeholder="Digite seu telefone" required>
+            <select class="input-padrao" name="servico" required>
+                <option selected disabled>Selecione um serviço</option>
+                <option value="site">Site</option>
+                <option value="sistema">Sistema</option>
+                <option value="aplicativo">Aplicativo</option>
+            </select>
+            <button class="button-padrao" type="reset">Limpar dados</button>
+            <button class="button-padrao" type="submit">Enviar Agora</button>
+        </form>
+    </section>
+    <!-- <section class="formulario">
         <div>
             <h1>Contato</h1>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
@@ -48,7 +71,7 @@
             <button class="button-form" type="reset">Clear</button>
             <button class="button-form" type="submit">Send</button>
         </form>
-    </section>
+    </section> -->
     <footer>
 
     </footer>
