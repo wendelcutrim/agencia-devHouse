@@ -23,3 +23,77 @@ Para exibir imagens no servidor:
 Para instalar o nodemon no modo desenvolvedor:
   executar o comando: npm install nodemon -D
   Assim fará com que no package.json o arquivo seja salvo no modo desenvolvedor, caso prescise instalar outras bibliotecas no modo desenvolvedor basta utilizar o comando -D no final.
+
+Rotas:
+  Na estrutura MVC, Model, Views e Controllers são um design pattern para organização:
+    Models: Onde fica as regras de negócios e faz comunicação com o banco de dados.
+    Controllers: Responsável por receber as solicitações das Views, enviar para a Models e retornar a resposta para a views.
+    Views: Interface gráfica para ter interação com o usuário e apresentar o que foi solicitado.
+    * As views não tem comunicação direta com as models, ou seja, o controller é responsávle por intermediar entre views e models.
+
+Ao criar uma pasta de rotas, sua estrutura pode ser um arquivo para todas as rotas ou um arquivo pra cada rota. Dentro desse arquivo, chamamos o express normalmente (
+  
+  criado uma constante requirindo o express: const express = require('express');
+  criando uma variável para armazenar as funções do express e utilizando o método Router(), geralmente é chamada de routes: 
+    const routes = express.Router();
+
+  Para chamar as rotas utilizar routes.METHODHTPP ('rota', (req,res)=>{retorno da rota});
+
+  Exportar o módulo: module.exports = routes;
+  )
+
+Após criar o arquivo de rotas, dentro do arquivo principal, o app.js chamar as rotas: 
+  const routes = ('./routes/index');
+Utilizar o método .use do express para utilizar as rotas:
+  app.use(routes);
+Feito isso, as rotas serão processadas dentro do arquivo principal, o app.js
+
+Rotas dinâmicas: Para criar rotas dinâmicas utilizamos a mesma estrutura, mas no retorno, iremos utilizar o metodo .params do request.
+Nesse caso o usuário é obrigado a digitar o id após o produtos/ caso não digite, o servidor irá apresentar uma mensagem de erro falando que não encontrou.
+  routes.get('/produtos/:id' (req,res)=>{
+    let productId = req.params.id;
+    res.send("Eu tenho o produto com o id: " + id)
+  })
+
+Para que o servidor responda mesmo se não encontrar, devemos colocar o atributo ? apóso id:
+  routes.get('/produtos/:id?' (req,res)=>{
+    let productId = req.params.id;
+    res.send("Eu tenho o produto com o id: " + id)
+  })
+Nesse caso o servidor irá responder que tem o produto mas o valor vai ser undefined.
+
+O jeito mais utilizado e correto para o req.params seria a desestruturação:
+  routes.get('/produtos/:id?' (req,res)=>{
+    let {id} = req.params;
+    res.send("Eu tenho o produto com o id: " + id)
+  })
+
+Método path.resolve(), é semelhante ao path.join(__dirname + "arquivo") porém ele é mais exato, para isso basta usar o metodo e como 1º parâmetro informar a pasta em string e 2º parâmetro o arquivo que deve procurar em string, caso esteja em outro caminho, passar a sua rota em string:
+  Ex: routes.get('/manutencao', (req,res) => res.sendFile(path.resolve('views', 'manutencao.html')));
+
+Para configurar o template engine: instalar qual vamos utilizar, no caso o ejs:
+  npm install ejs
+
+Quando for utilizar a engine ejs, nós deixaremos de utilizar a extensão .html
+
+Dentro do app.js deve informar ao express que iremos utilizar uma view engine e informar qual a view através do método:
+  app.set("view engine", "ejs");
+Feito isso, o express irá entender que estamos utilizando uma view engine que é o ejs.
+
+Após informar a engine, devemos informar ao express onde está a nossa views, para isso basta usar o método:
+  app.set('views', path.resolve("views"));
+Feito isso, o express irá procurar os arquivos ejs dentro da pasta views.
+
+Agora, basta alterar os arquivos html para a extensão .ejs
+
+Dentro do arquivo de rotas, no request estavamos utilizando: 
+  routes.get('/contato',(req,res)=>res.sendFile(path.resolve('views', 'contato.html')));
+
+Agora com o ejs configurado, passaremos utilizar o res.render ao invés do res.SendFile, pois o sendfile envia arquivos estáticos, com o res.render o servidor irá renderizar os arquivos, sendo possível colocar objetos literais para enviar.
+  routes.get('/', (req,res) => {
+    res.render("home", {titulo: "Sua empresa vai ser incrivel!"})
+});
+
+Nesse caso, criamos o objeto literal titulo, para usar ele dentro do html, dentro da tag que deseja enviar o objeto, basta utilizar: <%= objeto %>
+Nesse caso o servidor irá renderizar a informação desse objeto dentro do html, pois dentro das tagas <%=%> podemos escrever qualquer coisa em javascript e não ficará visível no inspecionar elemento.
+  Ex: <h1><%= titulo %></h1>
