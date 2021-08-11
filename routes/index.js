@@ -1,28 +1,22 @@
 const express = require('express');
 const routes = express.Router();
-const path = require('path');
-const depoimentos = require('../models/depoimentos');
+const indexController = require('../controllers/indexController');
 
-routes.get('/', (req,res) => {
-    res.render("home", {titulo: "Sua empresa vai ser incrivel!"})
-});
-/* res.sendFile(path.resolve('views', 'home.html'))); */
+routes.get('/', indexController.index);
 
-routes.get('/home',(req,res)=>res.redirect('/'));
+routes.get('/home', indexController.redirectHome);
 
-routes.get('/contato',(req,res)=>res.sendFile(path.resolve('views', 'contato.html')));
+routes.get('/contato', indexController.viewContato);
 
-routes.post('/receber-contato',(req,res)=>{
-    console.log(req.body)
-    res.send("Contato Recebido")
-})
+routes.post('/receber-contato', indexController.receberContato);
 
-routes.get('/manutencao', (req,res) => res.sendFile(path.resolve('views', 'manutencao.html')));
+routes.get('/manutencao', indexController.viewManutencao);
 
-routes.get('/blog', (req,res) => res.sendFile(path.resolve('views', 'blog.html')));
+routes.get('/blog', indexController.viewBlog);
 
-routes.get('/depoimentos', (req,res)=>{
-    res.render("depoimentos", {depoimentos, titulo: "Depoimentos"});
-})
+routes.get('/depoimentos', indexController.exibirDepoimentos);
+
+routes.get('/cadastrar-depoimento', indexController.exibirFormDepoimento);
+routes.post('/cadastrar-depoimento', indexController.cadastrarDepoimentos);
 
 module.exports = routes;
