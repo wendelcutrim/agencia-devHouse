@@ -1,34 +1,34 @@
 /* const { depoimentos } = require("./depoimentos"); */
-const { v4: uuidv4 } = require('uuid');
+const {
+    v4: uuidv4
+} = require('uuid');
 
-let listaDeProdutos = [{
-    id: uuidv4(),
-    nome: "Site",
-    descricao: "Tenha o site dos seus sonhos",
-    imagem: "https://www.hostinger.com.br/tutoriais/wp-content/uploads/sites/12/2018/11/Como-Criar-um-Site.png",
-}]
+const produtoModel = {
 
-function cadastrarProduto (nome, descricao, imagem) {
-    const novoProduto = {
-        id: uuidv4(),
-        nome,
-        descricao,
-        imagem,
-    };
+    listaDeProdutos: [],
 
-    return listaDeProdutos.push(novoProduto);
-}
+    cadastrarProduto: function (nome, descricao, imagem) {
+        const novoProduto = {
+            id: uuidv4(),
+            nome,
+            descricao,
+            imagem,
+        };
 
-function deletarProduto (id) {
-    const novaListaDeProdutos = listaDeProdutos.filter((produto) => produto.id != id);
+        return this.listaDeProdutos.push(novoProduto);
+    },
 
-    if(novaListaDeProdutos.length == listaDeProdutos.length){
-        return false;
-    }
+    excluirProduto: function (id) {
+        console.log("O produto selecionado para exluir foi: " + id);
+        let novaListaDeProdutos = this.listaDeProdutos.filter((produto) => produto.id !== id);
+        if (novaListaDeProdutos.length == this.listaDeProdutos.length) {
+            return false;
+        }
 
-    listaDeProdutos = novaListaDeProdutos;
-    return true;
+        this.listaDeProdutos = novaListaDeProdutos;
+        return true;
 
-}
+    },
+};
 
-module.exports = { listaDeProdutos, cadastrarProduto, deletarProduto };
+module.exports = produtoModel;

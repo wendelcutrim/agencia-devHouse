@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/produtosAdmin.css">
     <title>Admin - Agência Devhouse</title>
 </head>
+
 <body>
     <%- include('../components/header') %>
     <main>
+        <div>
+            <a href="/admin/cadastroProdutos"><button class="button-cadastrar-produtos">Cadastrar Produto</button></a>
+        </div>
         <table>
             <thead>
                 <tr>
@@ -18,15 +25,20 @@
                 </tr>
             </thead>
             <tbody>
+                <% produtos.forEach(produto => { %>
                 <tr>
-                    <td>12121312u43240</td>
-                    <td>Site Incrivel</td>
+                    <td><%= produto.id %></td>
+                    <td><%= produto.nome %></td>
                     <td>
-                        <button>Excluir</button>
+                        <form action="/deletar-produto/<%= produto.id %>?_method=DELETE" method="POST">
+                            <button type="submit">Excluir</button>
+                        </form>
                     </td>
                 </tr>
+                <% }); %>
             </tbody>
         </table>
     </main>
 </body>
+
 </html>
