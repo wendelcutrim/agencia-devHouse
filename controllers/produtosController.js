@@ -14,14 +14,15 @@ const produtosController = {
     },
 
     cadastrarProdutosAdmin: (req, res) =>{
-        console.log(req.body);
+        /* console.log(req.body); */
+        console.log(req.file);
         const {
             nome,
             descricao,
             imagem,
         } = req.body;
-        produtoModel.cadastrarProduto(nome, descricao, imagem);
-        console.log(produtoModel.listaDeProdutos)
+        produtoModel.cadastrarProduto(nome, descricao, req.file.filename);
+        console.log(produtoModel.listaDeProdutos);
         return res.redirect("/admin/produtos");
     },
 
