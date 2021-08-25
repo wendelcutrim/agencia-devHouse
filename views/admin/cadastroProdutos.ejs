@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,400;1,700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,400;1,700&display=swap">
     <link rel="stylesheet" href="/css/global.css">
     <title>Admin - Agência Devhouse</title>
 </head>
 <body>
     <%- include('../components/header') %>
     <main>
-       <form action="/admin/cadastroProdutos" method="POST">
+       <form action="/admin/cadastroProdutos" method="POST" enctype="multipart/form-data">
            <label>Nome do Produto</label>
            <input type="text" name="nome">
            <label>Descrição do Produto</label>
            <input type="text" name="descricao">
-           <label>Link da Imagem do Produto</label>
-           <input type="text" name="imagem">
+           <label>Imagem do Produto</label>
+           <input type="file" name="imagem">
            <button type="submit">Finalizar Cadastro</button>
        </form>
     </main>

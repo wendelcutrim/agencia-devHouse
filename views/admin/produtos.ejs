@@ -21,6 +21,7 @@
                 <tr>
                     <th>id</th>
                     <th>Nome</th>
+                    <th>Imagem</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -29,6 +30,9 @@
                 <tr>
                     <td><%= produto.id %></td>
                     <td><%= produto.nome %></td>
+                    <td>
+                        <img src="/uploads/<%= produto.imagem %>" alt="<%= produto.nome %>">
+                    </td>
                     <td>
                         <form action="/deletar-produto/<%= produto.id %>?_method=DELETE" method="POST">
                             <button type="submit">Excluir</button>
