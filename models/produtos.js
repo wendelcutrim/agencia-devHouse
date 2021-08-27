@@ -3,9 +3,14 @@ const {
     v4: uuidv4
 } = require('uuid');
 
+const produtoJson = require('../database/produtos.json');
+const fs = require('fs');
+const path = require('path');
+
+
 const produtoModel = {
 
-    listaDeProdutos: [],
+    listaDeProdutos: produtoJson,
 
     cadastrarProduto: function (nome, descricao, imagem) {
         const novoProduto = {
@@ -13,9 +18,10 @@ const produtoModel = {
             nome,
             descricao,
             imagem,
-        };
-
-        return this.listaDeProdutos.push(novoProduto);
+        }
+        
+        this.listaDeProdutos.push(novoProduto);
+        this.atualizaJson();
     },
 
     excluirProduto: function (id) {
@@ -26,9 +32,15 @@ const produtoModel = {
         }
 
         this.listaDeProdutos = novaListaDeProdutos;
+        this.atualizaJson();
         return true;
 
     },
+
+    atualizaJson() {
+        const listaEmJson = JSON.stringify(this.listaDeProdutos);
+        fs.writeFileSync(path.resolve("database", "produtos.json"), listaEmJson);
+    }
 };
 
 module.exports = produtoModel;
