@@ -29,6 +29,7 @@ const usuarioModel = {
 
     return usuario;
   },
+
   excluirUsuario: function (id) {
     console.log(id);
     const novaListaDeUsuarios = this.listaDeUsuarios.filter(
