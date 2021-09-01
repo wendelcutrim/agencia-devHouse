@@ -3,7 +3,7 @@ const {
     v4: uuidv4
 } = require('uuid');
 
-const produtoJson = require('../database/produtos.json');
+const produtoJson = require('../databases/produtos.json');
 const fs = require('fs');
 const path = require('path');
 

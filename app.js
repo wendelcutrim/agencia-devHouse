@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
+const port = 3000;
 const path = require('path');
 const methodOverride = require('method-override')
 const routes = require('./routes');
 const rotasDeProdutos = require('./routes/produtos');
+const usuarioRotas = require('./routes/usuariosRotas');
 
 
 //configurando o template egine ejs
@@ -16,6 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.use(routes);
 app.use(rotasDeProdutos);
+app.use(usuarioRotas);
 
 //subindo o servidor
-app.listen(3000, () => console.log("Servidor está funcionando"));
+app.listen(port, () => console.log("Servidor está funcionando"));
