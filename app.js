@@ -16,9 +16,11 @@ app.use(methodOverride('_method'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
+
+//Rotas
 app.use(routes);
 app.use(rotasDeProdutos);
 app.use(usuarioRotas);
 
 //subindo o servidor
-app.listen(port, () => console.log("Servidor está funcionando"));
+app.listen(port, () => console.log("Servidor está funcionando 🚀"));
