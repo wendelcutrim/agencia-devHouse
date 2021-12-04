@@ -3,14 +3,19 @@ const {
     v4: uuidv4
 } = require('uuid');
 
-const produtoJson = require('../databases/produtos.json');
+const produtosJson = require('../databases/produtos.json');
 const fs = require('fs');
 const path = require('path');
 
 
 const produtoModel = {
 
-    listaDeProdutos: produtoJson,
+    listaDeProdutos: produtosJson,
+
+    atualizaJson() {
+        const listaEmJson = JSON.stringify(this.listaDeProdutos);
+        fs.writeFileSync(path.resolve("databases", "produtos.json"), listaEmJson);
+    },
 
     cadastrarProduto: function (nome, descricao, imagem) {
         const novoProduto = {
@@ -37,10 +42,7 @@ const produtoModel = {
 
     },
 
-    atualizaJson() {
-        const listaEmJson = JSON.stringify(this.listaDeProdutos);
-        fs.writeFileSync(path.resolve("database", "produtos.json"), listaEmJson);
-    }
+    
 };
 
 module.exports = produtoModel;
