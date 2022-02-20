@@ -8,6 +8,7 @@ const rotasDeProdutos = require('./routes/produtos');
 const usuarioRotas = require('./routes/usuariosRotas');
 
 
+
 //configurando o template egine ejs
 app.set('view engine', 'ejs');
 app.set('views', path.resolve("views"));
@@ -22,5 +23,10 @@ app.use(routes);
 app.use(rotasDeProdutos);
 app.use(usuarioRotas);
 
+//Errors Route Response
+app.use((req, res, next) => {
+    res.status(404).render('not-found');
+});
+
 //subindo o servidor
-app.listen(port, () => console.log("Servidor está funcionando 🚀"));
+app.listen(port, () => console.log(`O servidor está rodando na porta: ${port}🚀`));
