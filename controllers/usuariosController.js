@@ -1,4 +1,4 @@
-const { buscarUsuarioPorEmail, listaDeUsuarios } = require("../models/usuariosModel");
+const { buscarUsuarioPorEmail } = require("../models/usuariosModel");
 const usuarioModel = require("../models/usuariosModel");
 
 const usuarioController = {
